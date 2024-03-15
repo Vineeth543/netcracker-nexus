@@ -1,0 +1,166 @@
+// Colors
+@primary-color: #0b4ac9;
+@secondary-color: #0d59f2;
+@background-sky: #f3f7ff;
+@background-light: #d7e4fd;
+@background-white: #ffffff;
+@border-gray: #c2c6ce;
+@border-blue: #0068ff;
+@text-gray: #a4a9b5;
+@main-text-color: #3b4559;
+@dark-text-color: #181c24;
+@card-text-color: #677084;
+@badge-text-color: #083ba1;
+
+// Gradients
+@primary-gradient-end: #5e91f7;
+@primary-gradient-dark: #753bbd;
+@secondary-gradient-start: #f3fbfd;
+@secondary-gradient-end: #f2f3ff;
+
+// Usage
+@border-gray-lighter: #e1e2e6;
+
+// Common Styles
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+::ng-deep.search-field {
+    .ux-search-field {
+        width: 700px;
+        height: 36px;
+
+        &__input {
+            font-size: 16px;
+            color: @dark-text-color;
+
+            &::placeholder {
+                font-size: 16px;
+                color: @text-gray;
+            }
+
+            &-wrapper {
+                height: 100%;
+                background: @background-white;
+                padding: 12px 16px !important;
+                border: 1px solid @border-gray !important;
+            }
+        }
+
+        &._focused {
+            .ux-search-field__input-wrapper {
+                border: 1px solid @secondary-color !important;
+            }
+        }
+    }
+
+    &__suggestions {
+        &__popover {
+            width: 700px;
+
+            .ux-popover {
+                &__inner {
+                    overflow: hidden;
+                    padding: 8px;
+                }
+
+                &__header {
+                    .flex-column;
+                    padding: 0;
+
+                    &__text {
+                        padding: 6px 8px;
+                        color: @dark-text-color;
+                    }
+
+                    &__line {
+                        border: 1px solid @border-gray-lighter;
+                        margin: 2px 0;
+                    }
+                }
+
+                &__content {
+                    padding: 0;
+
+                    .ux-dropdown-menu {
+                        &__list {
+                            gap: 2px;
+                        }
+
+                        &__item {
+                            padding: 6px 8px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-list {
+            padding: 0 4px 0 0;
+            max-height: 200px;
+
+            &._scrollable {
+                overflow-y: scroll;
+            }
+        }
+    }
+
+    &__selected-items-list {
+        display: flex;
+        gap: 10px;
+
+        .search-field__item {
+            &-text {
+                color: @secondary-color;
+                white-space: nowrap;
+            }
+
+            &-wrapper {
+                border-radius: 100px;
+                padding: 4px 8px;
+                background: @background-light;
+            }
+        }
+    }
+
+    &__item {
+        &-wrapper {
+            width: 100%;
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+
+        &-text {
+            font-weight: 500;
+            letter-spacing: 0px;
+            color: @dark-text-color;
+        }
+
+        &-icon {
+            width: 20px;
+            height: 20px;
+            fill: @secondary-color;
+        }
+    }
+
+    &__empty-message {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        padding: 6px 8px;
+
+        &__icon {
+            width: 20px;
+            height: 20px;
+            fill: red;
+        }
+
+        &__text {
+            font-weight: 500;
+            letter-spacing: 0px;
+        }
+    }
+}

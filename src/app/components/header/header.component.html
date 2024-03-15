@@ -1,0 +1,68 @@
+<header class="w-full flex items-center gap-4 py-3 search-field">
+    <div class="w-48 h-12">
+        <img
+            src="../../../assets/images/nexus-logo-2.png"
+            alt="logo"
+            class="w-full h-full object-cover" />
+    </div>
+
+    <ux-search-field
+        #searchField
+        placeholder="Search..."
+        [(value)]="_searchValue"
+        (valueChange)="_onfilterResult($event)"
+        (click)="_openPopOver()">
+    </ux-search-field>
+
+    <ux-popover
+        class="search-field__suggestions__popover"
+        [attachToEl]="searchField?.elementRef?.nativeElement"
+        [visible]="_popoverVisible"
+        [container]="searchField.elementRef.nativeElement"
+        [template]="suggestionsListTemplate"
+        [closeOnOutsideClick]="true"
+        (onClose)="_onClosePopOver()">
+    </ux-popover>
+
+    <ux-button
+        [text]="'Login'"
+        [type]="'secondary'"
+        (click)="_openLoginModal()">
+    </ux-button>
+    <ux-button [text]="'Sign Up'"></ux-button>
+</header>
+
+<ng-template #suggestionsListTemplate>
+    <ux-dropdown-menu
+        class="search-field__suggestions-list"
+        [class._scrollable]="_searchResults.length > 5"
+        size="medium"
+        [items]="_searchResults"
+        [itemTemplate]="listItemTemplate"
+        (itemSelect)="_onSelectResult($event)">
+    </ux-dropdown-menu>
+
+    <ng-container *ngIf="!_searchResults.length">
+        <div class="search-field__empty-message">
+            <img
+                class="search-field__empty-message__icon"
+                src="../../../assets/svg/error.svg"
+                alt="error" />
+            <span class="search-field__empty-message__text">Nothing Found</span>
+        </div>
+    </ng-container>
+</ng-template>
+
+<ng-template
+    #listItemTemplate
+    let-item="item">
+    <div class="search-field__item-wrapper">
+        <img
+            *ngIf="!item.selected"
+            class="search-field__item-icon"
+            src="../../../assets/svg/list.svg"
+            alt="list" />
+
+        <span class="search-field__item-text"> {{ item.text }} </span>
+    </div>
+</ng-template>

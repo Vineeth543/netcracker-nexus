@@ -1,8 +1,31 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
+import { NewPostComponent } from './components/new-post/new-post.component';
+
+const routes: Routes = [
+    {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full',
+    },
+    {
+        path: 'home',
+        component: HomeComponent,
+    },
+    {
+        path: 'login',
+        component: LoginComponent,
+    },
+    {
+        path: 'new-post',
+        component: NewPostComponent,
+    },
+];
 
 @NgModule({
-    declarations: [],
-    imports: [CommonModule],
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule],
 })
 export class AppRoutingModule {}

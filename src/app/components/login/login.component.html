@@ -1,0 +1,69 @@
+<div class="auth-page">
+  <div class="register-content">
+    <div class="register-grid">
+      <div>
+        <div class="icon-holder">
+          <span>icon</span>
+        </div>
+        <div class="form-container">
+          <form class="login-form" onSubmit="">
+            <div>
+              <label class="form-label s-label fc-black-600"> Username </label>
+              <input
+                class="form-input s-input"
+                type="text"
+                name="username"
+                value="{username}"
+                onChange=""
+                id="username"
+                required
+              />
+            </div>
+            <div>
+              <label class="form-label s-label fc-black-600"> Password </label>
+              <input
+                class="form-input s-input"
+                type="password"
+                name="password"
+                value="{password}"
+                onChange=""
+                id="password"
+                required
+              />
+            </div>
+            <div class="grid gs4 gsy fd-column js-auth-item">
+              <button
+                class="s-btn s-btn__primary"
+                id="submit-button"
+                name="submit-button"
+              ></button>
+            </div>
+          </form>
+          <div class="fs-caption license fc-black-500">
+            <span
+              to="https://stackoverflow.com/legal/terms-of-service/public"
+              class="-span"
+            >
+              terms of service
+            </span>
+            <span
+              to="https://stackoverflow.com/legal/privacy-policy"
+              name="privacy"
+              class="-span"
+            >
+              privacy policy
+            </span>
+            <span
+              to="https://stackoverflow.com/legal/cookie-policy"
+              class="-span"
+            >
+              cookie policy
+            </span>
+            <input type="hidden" name="legalspansShown" value="1" />
+          </div>
+          <div class="redirects fc-black-500"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
