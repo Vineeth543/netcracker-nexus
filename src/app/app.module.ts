@@ -15,9 +15,11 @@ import { NewPostComponent } from './components/new-post/new-post.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UxLabelModule } from '@netcracker/ux-ng2/label';
 import { UxTextFieldModule } from '@netcracker/ux-ng2/text-field';
+import { UxTextAreaFieldModule } from '@netcracker/ux-ng2/textarea-field';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-    declarations: [AppComponent, LoginComponent, HeaderComponent, HomeComponent, NewPostComponent],
+    declarations: [AppComponent, LoginComponent, HeaderComponent, HomeComponent, NewPostComponent, FooterComponent],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
@@ -30,6 +32,7 @@ import { UxTextFieldModule } from '@netcracker/ux-ng2/text-field';
         UxDropdownMenuModule,
         UxLabelModule,
         UxTextFieldModule,
+        UxTextAreaFieldModule,
     ],
     providers: [
         HammerGestureConfig,

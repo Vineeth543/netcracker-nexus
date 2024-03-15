@@ -1,9 +1,45 @@
 <div class="w-full flex flex-col gap-5 items-center justify-center">
-    <h1 class="font-bold text-4xl text-black text-center">Create a new post</h1>
-    <div class="flex flex-col w-[40rem] h-[28rem] gap-2 p-5 border border-gray-300 rounded-lg">
+    <h1 class="font-bold text-3xl text-black text-center">Please ask your question below</h1>
+    <div class="w-[40rem] p-5 bg-sky-100 border border-sky-400 rounded-lg">
+        <span class="text-lg font-normal text-black">Tips on getting good answers quickly</span>
+        <p class="text-sm font-normal text-black mt-2">
+            Make sure your question has not been asked already. Use the search function to find similar questions. If you don’t find your
+            answer, you can ask a new one.
+        </p>
+        <p class="text-base font-semibold text-black mt-4">Steps</p>
+        <ul class="list-disc list-inside">
+            <li>Summarize your problem in a one-line title.</li>
+            <li>Describe your problem in more detail.</li>
+            <li>Review your question and post it to the site.</li>
+        </ul>
+    </div>
+    <div class="flex flex-col w-[40rem] p-5 border border-gray-300 rounded-lg">
         <label class="font-semibold text-xl">Title</label>
-        <p>Be specific and imagine you’re asking a question to another person.</p>
-        <ux-text-field [placeholder]="'Title'"></ux-text-field>
-        
+        <span class="text-sm font-normal text-gray-500">Be specific and imagine you’re asking a question to another person.</span>
+        <ux-text-field
+            class="mt-2"
+            [placeholder]="'e.g. How can I add my parents to the group health insurance plan at Netcracker?'">
+        </ux-text-field>
+
+        <label class="font-semibold text-xl mt-5">What are the details of your problem?</label>
+        <span class="text-sm font-normal text-gray-500">Include any error messages, key APIs, or unusual circumstances.</span>
+        <ux-textarea-field
+            class="mt-2"
+            [rows]="10"
+            [placeholder]="
+                'e.g. I am trying to add my parents to the group health insurance plan at my company. I have tried to contact the HR department but they are not responding. I am not sure what to do next.'
+            ">
+        </ux-textarea-field>
+    </div>
+    <div class="flex gap-5">
+        <ux-button
+            class="w-1/2"
+            [text]="'Submit'">
+        </ux-button>
+        <ux-button
+            class="w-1/2"
+            color="red"
+            [text]="'Cancel'">
+        </ux-button>
     </div>
 </div>
