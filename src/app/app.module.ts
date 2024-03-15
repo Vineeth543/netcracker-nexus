@@ -17,9 +17,10 @@ import { UxLabelModule } from '@netcracker/ux-ng2/label';
 import { UxTextFieldModule } from '@netcracker/ux-ng2/text-field';
 import { UxTextAreaFieldModule } from '@netcracker/ux-ng2/textarea-field';
 import { FooterComponent } from './components/footer/footer.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 @NgModule({
-    declarations: [AppComponent, LoginComponent, HeaderComponent, HomeComponent, NewPostComponent, FooterComponent],
+    declarations: [AppComponent, LoginComponent, HeaderComponent, HomeComponent, NewPostComponent, FooterComponent, SearchResultsComponent],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,

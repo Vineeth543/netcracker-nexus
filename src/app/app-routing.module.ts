@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { NewPostComponent } from './components/new-post/new-post.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 const routes: Routes = [
     {
@@ -21,6 +22,14 @@ const routes: Routes = [
     {
         path: 'new-post',
         component: NewPostComponent,
+    },
+    {
+        path: 'search/:search',
+        component: SearchResultsComponent,
+    },
+    {
+        path: '**',
+        redirectTo: '/home',
     },
 ];
 

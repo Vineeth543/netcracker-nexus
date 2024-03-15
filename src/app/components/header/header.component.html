@@ -10,8 +10,7 @@
         #searchField
         placeholder="Search..."
         [(value)]="_searchValue"
-        (valueChange)="_onfilterResult($event)"
-        (click)="_openPopOver()">
+        (onSubmitValueChange)="_searchQuestion()">
     </ux-search-field>
 
     <ux-button
